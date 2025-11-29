@@ -1,0 +1,5 @@
+# apps/py-app/requirements.txt
+fastapi[standard]
+uvicorn
+python-dotenv
+python-multipart

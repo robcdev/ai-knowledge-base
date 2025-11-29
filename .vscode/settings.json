@@ -1,0 +1,55 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}/apps/backend/.venv/bin/python",
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/apps/backend/.venv/lib/python3.11/site-packages"
+  ],
+  "python.analysis.typeCheckingMode": "basic",
+  "python.languageServer": "None",
+  "python.venvPath": "${workspaceFolder}/apps/backend",
+  "python.venvFolders": [
+    "${workspaceFolder}/apps/backend/.venv"
+  ],
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python",
+    "editor.formatOnSave": true
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "prettier.enable": true,
+  "prettier.requireConfig": true,
+  "prettier.useEditorConfig": false,
+  "prettier.resolveGlobalModules": true,
+  "prettier.documentSelectors": ["**/*.{ts,tsx,js,jsx,json,css,scss,html,md}"]
+}

@@ -1,0 +1,25 @@
+{
+  "include": [
+    "apps/backend/**/*.py"
+  ],
+  "exclude": [
+    "**/node_modules",
+    "**/__pycache__",
+    "apps/web",
+    "**/.venv"
+  ],
+  "venvPath": "apps/backend",
+  "venv": ".venv",
+  "pythonVersion": "3.11",
+  "executionEnvironments": [
+    {
+      "root": "apps/backend",
+      "pythonVersion": "3.11",
+      "extraPaths": [
+        "apps/backend/.venv/lib/python3.11/site-packages"
+      ]
+    }
+  ]
+}
+
+
