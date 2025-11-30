@@ -2,7 +2,8 @@
   <a
     [routerLink]="route()"
     routerLinkActive="bg-dark-bg-secondary"
-    class="flex gap-4 items-center h-7 w-full px-2 py-4 hover:cursor-pointer text-md hover:bg-dark-bg rounded transition-colors group"
+    [routerLinkActiveOptions]="{ exact: exact() }"
+    class="flex gap-4 items-center h-7 w-full h-full px-2 py-4 hover:cursor-pointer text-md hover:bg-dark-bg-secondary rounded transition-colors group"
   >
     <fa-icon [icon]="icon()" class="w-4 mr-1 text-gray-400"></fa-icon>
     <span>{{ label() }}</span>

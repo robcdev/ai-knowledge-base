@@ -13,4 +13,5 @@ export class SideBarButton {
   label = input.required<string>();
   icon = input.required<IconDefinition>();
   route = input.required<string>();
+  exact = input<boolean>(false);
 }

@@ -1,14 +1,15 @@
-<aside class="flex flex-col h-screen w-64 bg-[#1e2430] border-r border-[#2d3748] text-gray-300">
+<aside class="flex flex-col h-screen w-64 bg-dark border-r border-gray-600 text-gray-300 mr-6">
   <!-- Header -->
-  <app-side-bar-header></app-side-bar-header>
+  <app-side-bar-header class="mr-2"></app-side-bar-header>
 
   <!-- Navigation Tree -->
-  <nav class="flex-1 items-center overflow-y-auto py-2">
+  <nav class="flex-1 items-center overflow-y-auto py-2 mr-2">
     <div>
       <app-side-bar-button
         [label]="'Dashboard'"
         [icon]="faChartLine"
         [route]="'/'"
+        [exact]="true"
       ></app-side-bar-button>
       <app-side-bar-button
         [label]="'Context Files'"
