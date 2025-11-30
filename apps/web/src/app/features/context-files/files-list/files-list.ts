@@ -10,5 +10,4 @@ import { ContextFile } from '../../../shared/types/context-file';
 })
 export class FilesList {
   items = input<ContextFile[]>([]);
-  hasSearch = input<boolean>(false);
 }
