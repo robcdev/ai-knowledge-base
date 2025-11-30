@@ -1,11 +1,13 @@
-<div class="flex flex-col overflow-hidden bg-dark-bg text-gray-300">
-  <div class="flex w-full border border-dark-border py-4 px-4">header</div>
-  <div class="flex m-8">
+<div class="flex flex-col h-svh overflow-y-auto bg-dark-bg text-gray-300">
+  <div class="flex items-center w-full h-1/12 border border-dark-border px-4 text-4xl">
+    AI Knowledge Base
+  </div>
+  <div class="h-11/12 flex">
     <!-- Sidebar -->
     <app-side-bar />
 
     <!-- Main Content Area -->
-    <div class="flex-1 overflow-hidden">
+    <div class="flex f overflow-auto">
       <app-main-container />
     </div>
   </div>
