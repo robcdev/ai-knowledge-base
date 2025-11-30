@@ -5,9 +5,8 @@
     "source.fixAll.eslint": "explicit"
   },
   "prettier.enable": true,
-  "prettier.requireConfig": false,
-  "prettier.prettierPath": "./node_modules/prettier",
-  "prettier.configPath": "./.prettierrc",
+  "prettier.requireConfig": true,
+  "prettier.resolveGlobalModules": false,
   "eslint.validate": [
     "javascript",
     "javascriptreact",
@@ -29,5 +28,7 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
-  }
+  },
+  "angular.enable-experimental-ivy-prompt": false,
+  "angular.trace.server": "verbose"
 }

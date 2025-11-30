@@ -51,5 +51,7 @@
   "prettier.requireConfig": true,
   "prettier.useEditorConfig": false,
   "prettier.resolveGlobalModules": true,
-  "prettier.documentSelectors": ["**/*.{ts,tsx,js,jsx,json,css,scss,html,md}"]
+  "prettier.documentSelectors": [
+    "**/*.{ts,tsx,js,jsx,json,css,scss,html,md}"
+  ]
 }
