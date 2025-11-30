@@ -1,6 +1,5 @@
-<div class="flex items-center justify-between mb-6">
+<div class="flex items-center justify-between mb-6 relative">
   <h2 class="text-3xl">Project</h2>
-  <div class="hover:cursor-pointer rounded-2xl hover:bg-dark-bg-secondary p-3">
-    <fa-icon [icon]="faEllipsisVertical"></fa-icon>
-  </div>
+
+  <app-context-menu [menuItems]="menuItems"></app-context-menu>
 </div>
