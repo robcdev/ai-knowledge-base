@@ -1,4 +1,4 @@
-import { Component, output } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -7,10 +7,13 @@ import { Component, output } from '@angular/core';
   styleUrl: './button.scss',
 })
 export class Button {
-  // Expose click events to parent via output signal
   readonly clicked = output<void>();
+  disabled = input(false);
 
   onClick() {
+    if (this.disabled()) {
+      return;
+    }
     this.clicked.emit();
   }
 }
