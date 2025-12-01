@@ -1,9 +1,11 @@
 <div class="flex flex-col h-svh overflow-y-auto bg-dark-bg text-gray-300">
-  <div class="flex items-center w-full h-1/12 border border-dark-border px-4 text-4xl relative">
+  <div
+    class="flex items-center w-full h-1/12 border border-dark-border px-4 text-2xl sm:text-3xl md:text-4xl relative"
+  >
     AI Knowledge Base
     <button
       type="button"
-      class="md:hidden absolute right-4 top-1/2 -translate-y-1/2 text-2xl text-gray-200 hover:text-white"
+      class="md:hidden hover:cursor-pointer absolute right-4 top-1/2 -translate-y-1/2 text-2xl text-gray-200 hover:text-white"
       (click)="toggleMenu()"
     >
       <fa-icon [icon]="faBars"></fa-icon>
@@ -17,16 +19,26 @@
     @if (showMobileMenu()) {
       <div class="fixed inset-0 z-50 md:hidden">
         <div class="absolute inset-0 bg-black/70 animate-fade-in" (click)="closeMenu()"></div>
-        <div class="relative w-full h-full bg-dark-bg text-gray-100 flex flex-col animate-slide-down">
+        <div
+          class="relative w-full h-full bg-dark-bg text-gray-100 flex flex-col animate-slide-down"
+        >
           <button
             type="button"
-            class="absolute top-4 right-4 text-3xl text-gray-200 hover:text-white"
+            class="absolute top-4 right-4 text-3xl text-gray-200 hover:text-white hover:cursor-pointer"
             (click)="closeMenu()"
           >
             <fa-icon [icon]="faXmark"></fa-icon>
           </button>
-          <nav class="flex-1 flex flex-col items-center justify-center gap-8 text-2xl font-semibold">
-            <a routerLink="/" routerLinkActive="text-white" class="hover:text-white" (click)="closeMenu()">Dashboard</a>
+          <nav
+            class="flex-1 flex flex-col items-center justify-center gap-8 text-2xl font-semibold"
+          >
+            <a
+              routerLink="/"
+              routerLinkActive="text-white"
+              class="hover:text-white"
+              (click)="closeMenu()"
+              >Dashboard</a
+            >
             <a
               routerLink="/context-files"
               routerLinkActive="text-white"
