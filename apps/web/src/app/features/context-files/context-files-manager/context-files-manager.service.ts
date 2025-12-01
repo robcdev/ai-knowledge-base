@@ -11,6 +11,7 @@ export class ContextFilesManagerService {
   readonly isOpen = signal(false);
   readonly request = signal<ContextFilesManagerRequest | null>(null);
   mode = signal<ResourceMode>('file');
+  selectedItemId = signal<string | null>(null);
 
   private resolver?: (result: AddResourceResult | null) => void;
 
@@ -21,7 +22,6 @@ export class ContextFilesManagerService {
    */
   open(request: ContextFilesManagerRequest): Promise<AddResourceResult | null> {
     this.request.set(request);
-    this.mode.set(request.type === 'update' ? request.file.resourceMode : 'file');
     this.isOpen.set(true);
     return new Promise(resolve => {
       this.resolver = resolve;
@@ -33,6 +33,14 @@ export class ContextFilesManagerService {
    */
   cancel() {
     this.resolveWith(null);
+  }
+
+  /**
+   * Sets the selected item ID of the context files manager modal.
+   * @param id - The ID of the selected item, or null if no item is selected.
+   */
+  setSelectedItemId(id: string | null) {
+    this.selectedItemId.set(id);
   }
 
   /**

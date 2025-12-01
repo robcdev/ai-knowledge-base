@@ -64,11 +64,14 @@ export class FileListItem {
 
   updateFile(): void {
     const file = this.item();
-    this.contextFilesManagerService.open({ type: 'update', file }).then((result: AddResourceResult | null) => {
-      if (!result) {
-        return;
-      }
-      console.log('Update file result:', result);
-    });
+    this.contextFilesManagerService.setSelectedItemId(file.id);
+    this.contextFilesManagerService
+      .open({ type: 'update', file })
+      .then((result: AddResourceResult | null) => {
+        if (!result) {
+          return;
+        }
+        console.log('Update file result:', result);
+      });
   }
 }

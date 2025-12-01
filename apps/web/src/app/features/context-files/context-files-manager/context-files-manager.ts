@@ -18,6 +18,7 @@ import {
 export class ContextFilesManager {
   private readonly managerService = inject(ContextFilesManagerService);
   readonly mode = computed(() => this.managerService.mode());
+  readonly request = computed(() => this.managerService.request());
 
   fileInput = viewChild<ElementRef>('fileInput');
   selectedFile = signal<File | undefined>(undefined);
@@ -117,14 +118,5 @@ export class ContextFilesManager {
    */
   onCancel() {
     this.managerService.cancel();
-  }
-
-  private resetForm(request: ContextFilesManagerRequest) {
-    // this.managerService.setMode(request.type === 'update' ? request.file.resourceMode : 'file');
-    this.selectedFile.set(undefined);
-    this.url.set(
-      request.type === 'update' && request.file.resourceMode === 'url' ? request.file.url : ''
-    );
-    this.resetFileInput();
   }
 }
