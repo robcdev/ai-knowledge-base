@@ -57,3 +57,10 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## GitHub Pages deployment
+
+- Workflow: `.github/workflows/deploy-web.yml` builds the app from `apps/web` with `npm ci && npm run build -- --base-href "/<repo-name>/"`, uploads `dist/web/browser`, and deploys with GitHub Pages.
+- Triggers: runs on pushes to `main` and on manual `workflow_dispatch`. Adjust the `on.push.branches` list if your default branch differs.
+- Base href: the action sets `BASE_HREF` to `/${{ github.event.repository.name }}/` for project pages. If you use a custom domain or user/organization page, change the build step to use `/` instead.
+- Pages setup: in the repository’s Settings → Pages, choose “GitHub Actions” as the source after the first successful run.
