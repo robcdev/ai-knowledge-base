@@ -4,5 +4,8 @@ export interface ContextFile {
   size: number;
   uploadDate: Date;
   summary?: string;
-  url: string;
+  url: string; // URL to access the file
+  resourceMode: 'file' | 'url';
 }
+
+export type ResourceMode = 'file' | 'url';

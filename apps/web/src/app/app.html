@@ -11,4 +11,8 @@
       <app-main-container />
     </div>
   </div>
+
+  @if (contextFilesManagerService.isOpen()) {
+    <app-context-files-manager />
+  }
 </div>

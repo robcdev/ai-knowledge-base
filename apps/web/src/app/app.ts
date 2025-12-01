@@ -2,16 +2,19 @@ import { Component, inject, signal } from '@angular/core';
 import { SideBar } from './shared/components/side-bar/side-bar';
 import { MainContainer } from './shared/components/main-container/main-container';
 import { ContextFilesStore } from './store/context-files.store';
+import { ContextFilesManager } from './features/context-files/context-files-manager/context-files-manager';
+import { ContextFilesManagerService } from './features/context-files/context-files-manager/context-files-manager.service';
 
 @Component({
   selector: 'app-root',
-  imports: [SideBar, MainContainer],
+  imports: [SideBar, MainContainer, ContextFilesManager],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
 export class App {
   protected readonly title = signal('web');
   private readonly contextFilesStore = inject(ContextFilesStore);
+  protected readonly contextFilesManagerService = inject(ContextFilesManagerService);
 
   constructor() {
     // Load context files on app initialization

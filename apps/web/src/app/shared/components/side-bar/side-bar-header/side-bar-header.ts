@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { faFileUpload } from '@fortawesome/free-solid-svg-icons';
 import { ContextMenu } from '../../context-menu/context-menu';
 import { MenuItem } from '../../context-menu/types';
+import { ContextFilesManagerService } from '../../../../features/context-files/context-files-manager/context-files-manager.service';
 
 @Component({
   selector: 'app-side-bar-header',
@@ -11,6 +12,7 @@ import { MenuItem } from '../../context-menu/types';
   styleUrl: './side-bar-header.scss',
 })
 export class SideBarHeader {
+  private readonly contextFilesManagerService = inject(ContextFilesManagerService);
   protected menuItems: MenuItem[] = [
     {
       label: 'Upload a context file',
@@ -24,9 +26,10 @@ export class SideBarHeader {
    * This is currently mocked out in the mocks folder.
    */
   fileUpload(): void {
-    alert('File upload clicked');
-    console.log(
-      'Uploads the file to the server and extracts the data. This is mocked on the mocks folder'
-    );
+    this.contextFilesManagerService.open({ type: 'create' }).then(result => {
+      if (result) {
+        console.log('File added from sidebar header:', result);
+      }
+    });
   }
 }
