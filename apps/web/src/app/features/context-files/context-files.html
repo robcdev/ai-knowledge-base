@@ -1,10 +1,29 @@
 <div class="p-8">
-  <h1 class="text-3xl font-bold mb-6 text-white">Context Files</h1>
-  <p class="text-gray-400 mb-6">
-    Manage files that will be used as context for AI chat interactions.
-  </p>
+  <div class="bg-dark-bg-secondary">
+    <h1 class="text-3xl font-bold mb-6 text-white">Context Files</h1>
+  </div>
+  <div class="flex w-full justify-between items-center pb-2">
+    <div>
+      <p class="text-gray-400">
+        Manage files that will be used as context for AI chat interactions.
+      </p>
+    </div>
+    <app-button (clicked)="openModal()"> Add Context File</app-button>
+  </div>
+  <mat-divider class="my-6 w-full border-slate-700!"></mat-divider>
 
-  <app-card [title]="'Your Context Files'">
-    <p class="text-gray-400">No files uploaded yet.</p>
-  </app-card>
+  <div class="my-6 flex w-full items-center gap-4">
+    <div class="flex-11/12">
+      <input
+        type="text"
+        placeholder="Search files..."
+        class="w-full p-2 border border-gray-300 rounded bg-dark-bg-secondary text-white"
+        [value]="searchTerm()"
+        (input)="onSearch($event.target.value)"
+      />
+    </div>
+    <div class="flex-1/12"><app-button (clicked)="clearSearch()">clear</app-button></div>
+  </div>
+
+  <app-files-list [items]="filteredItems()"></app-files-list>
 </div>
