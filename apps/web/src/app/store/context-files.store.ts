@@ -1,6 +1,6 @@
 import { Injectable, signal, computed, inject } from '@angular/core';
 import { ContextFile } from '../shared/types/context-file';
-import { ContextFileService } from '../features/context-files/context-file-service';
+import { ContextFileService } from '../features/context-files/context-file.service';
 
 interface ContextFilesState {
   contextFiles: ContextFile[];
