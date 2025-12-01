@@ -1,19 +1,21 @@
-<div class="p-8">
+<div class="px-4 py-6 sm:p-8 w-full">
   <div class="bg-dark-bg-secondary">
     <h1 class="text-3xl font-bold mb-6 text-white">Context Files</h1>
   </div>
-  <div class="flex w-full justify-between items-center pb-2">
-    <div>
-      <p class="text-gray-400">
-        Manage files that will be used as context for AI chat interactions.
-      </p>
-    </div>
-    <app-button (clicked)="openModal()"> Add Context File</app-button>
-  </div>
-  <mat-divider class="my-6 w-full border-slate-700!"></mat-divider>
 
-  <div class="my-6 flex w-full items-center gap-4">
-    <div class="flex-11/12">
+  <div class="flex w-full flex-col gap-3 pb-2 sm:flex-row sm:items-center sm:justify-between">
+    <p class="text-gray-400">
+      Manage files that will be used as context for AI chat interactions.
+    </p>
+    <div class="w-full sm:w-auto">
+      <app-button class="w-full sm:w-auto" (clicked)="openModal()"> Add Context File</app-button>
+    </div>
+  </div>
+
+  <mat-divider class="my-6 w-full border-slate-700"></mat-divider>
+
+  <div class="my-6 flex w-full flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+    <div class="w-full sm:flex-1">
       <input
         type="text"
         placeholder="Search files..."
@@ -22,7 +24,9 @@
         (input)="onSearch($event.target.value)"
       />
     </div>
-    <div class="flex-1/12"><app-button (clicked)="clearSearch()">clear</app-button></div>
+    <div class="w-full sm:w-auto">
+      <app-button class="w-full sm:w-auto" (clicked)="clearSearch()">clear</app-button>
+    </div>
   </div>
 
   <app-files-list [items]="filteredItems()"></app-files-list>
